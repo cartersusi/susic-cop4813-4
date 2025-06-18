@@ -1,0 +1,50 @@
+body {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ font-family: 'Roboto', sans-serif;
+ margin: 0;
+ padding: 0;
+ min-height: 100vh;
+ background-size: cover;
+ background-position: center;
+ background-repeat: no-repeat;
+ background-attachment: fixed;
+ transition: background-image 0.5s ease-in-out;
+}
+
+p {
+ font-size: 1.2rem;
+}
+
+.assignment {
+ background: rgba(255, 255, 255, 0.9);
+ padding: 1.5rem 3rem;
+ border-radius: 1rem;
+ margin: 2rem;
+}
+
+.assignment-border {
+ border: 2px solid black;
+ margin: 1rem;
+}
+
+.time-display {
+ text-align: center;
+}
+
+.current-time {
+ font-size: 2rem;
+ font-weight: bold;
+}
+
+.time-period {
+ font-size: 1.2rem;
+}
+
+@media (min-width: 2560px) {
+ body {
+   background-size: 2560px 1440px;
+ }
+}
+
