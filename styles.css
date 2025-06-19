@@ -1,50 +1,236 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
- display: flex;
- flex-direction: column;
- align-items: center;
- font-family: 'Roboto', sans-serif;
- margin: 0;
- padding: 0;
- min-height: 100vh;
- background-size: cover;
- background-position: center;
- background-repeat: no-repeat;
- background-attachment: fixed;
- transition: background-image 0.5s ease-in-out;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #efeeee;
+  background: #0e1019;
+  min-height: 100vh;
 }
 
-p {
- font-size: 1.2rem;
+a {
+  color: #4facfe;
 }
 
-.assignment {
- background: rgba(255, 255, 255, 0.9);
- padding: 1.5rem 3rem;
- border-radius: 1rem;
- margin: 2rem;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-.assignment-border {
- border: 2px solid black;
- margin: 1rem;
+header {
+  text-align: center;
+  margin-bottom: 40px;
 }
 
-.time-display {
- text-align: center;
+header h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
 }
 
-.current-time {
- font-size: 2rem;
- font-weight: bold;
+header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
 }
 
-.time-period {
- font-size: 1.2rem;
+.subjects-container {
+  display: grid;
+  gap: 30px;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-@media (min-width: 2560px) {
- body {
-   background-size: 2560px 1440px;
- }
+.subject-card {
+  background: #25293c;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.subject-card:hover {
+  transform: translateY(-5px);
+}
+
+.subject-header {
+  padding: 25px;
+  background: #444b6e;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s ease;
+}
+
+.subject-header:hover {
+  background: #707bb2;
+}
+
+.subject-header h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.expand-icon {
+  font-size: 1.5rem;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.subject-card.expanded .expand-icon {
+  transform: rotate(45deg);
+}
+
+.topics-container {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out;
+}
+
+.subject-card.expanded .topics-container {
+  max-height: 600px;
+}
+
+.topic-list {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.topic-link {
+  text-decoration: none;
+}
+
+.topic-card {
+  padding: 20px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  background: #0f1325;
+}
+
+.topic-card:hover {
+  border-color: #4facfe;
+  background: rgb(15, 19, 37, 0.25);
+  transform: translateY(-2px);
+}
+
+.topic-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
+
+.topic-card p {
+  font-size: 0.95rem;
+}
+
+/* Topic Page Styles */
+.topic-page {
+  background: white;
+  color: #787878;
+  min-height: 100vh;
+}
+
+.topic-header {
+  background: #0e1019;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.topic-header h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.topic-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.topic-content h2 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.topic-content p {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.topic-image {
+  width: 100%;
+  max-width: 600px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin: 30px 0;
+}
+
+.back-button {
+  display: inline-block;
+  background: rgb(79, 172, 254);
+  color: white;
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-top: 30px;
+}
+
+.back-button:hover {
+  background: rgba(79, 172, 254, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .container {
+      padding: 15px;
+  }
+  
+  header h1 {
+      font-size: 2.5rem;
+  }
+  
+  .topic-list {
+      grid-template-columns: 1fr;
+      padding: 15px;
+  }
+  
+  .subject-header {
+      padding: 20px;
+  }
+  
+  .subject-header h2 {
+      font-size: 1.5rem;
+  }
+  
+  .topic-header h1 {
+      font-size: 2.5rem;
+  }
+  
+  .topic-content {
+      padding: 30px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+      font-size: 2rem;
+  }
+  
+  .topic-header h1 {
+      font-size: 2rem;
+  }
+  
+  .topic-header {
+      padding: 40px 0;
+  }
+}

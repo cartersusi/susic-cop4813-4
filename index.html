@@ -1,32 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <script defer src="/_vercel/insights/script.js"></script>
     <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
-    <title>Assignment 3 | Carter Susi</title>
+    <title>Assignment 4 | Carter Susi</title>
     <meta
       name="description"
-      content=" Assignment 3: Time-Based Image Display Webpage"
+      content=" Assignment 4: Nested Menu Navigation Webpage"
     />
-</head>
 <body>
-  <div class="assignment">
-    <h1>Assignment 3: Time-Based Image Display Webpage</h1>
-    <p>Carter Susi</p>
-    <p>COP 4813</p>
-    <p>Computer Science</p>
-    <p>Welcome to my dynamic webpage!</p>
+    <div class="container">
+        <header>
+            <h1>Carter Susi</h1>
+            <p>Nested Menu Navigation Webpage</p>
+        </header>
 
-    <div class="assignment-border"></div>
+        <main>
+            <div class="subjects-container">
+                <div class="subject-card" data-subject="mathematics">
+                    <div class="subject-header">
+                        <h2>Mathematics</h2>
+                        <span class="expand-icon">+</span>
+                    </div>
+                    <div class="topics-container" id="mathematics-topics">
+                        <div class="topic-list">
+                            <a href="math/algebra.html" class="topic-link">
+                                <div class="topic-card">
+                                    <h3>Algebra</h3>
+                                </div>
+                            </a>
+                            <a href="math/geometry.html" class="topic-link">
+                                <div class="topic-card">
+                                    <h3>Geometry</h3>
+                                </div>
+                            </a>
+                            <a href="math/calculus.html" class="topic-link">
+                                <div class="topic-card">
+                                    <h3>Calculus</h3>
+                                </div>
+                            </a>
+                            <a href="math/statistics.html" class="topic-link">
+                                <div class="topic-card">
+                                    <h3>Statistics</h3>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
-    <div class="time-display">
-        <div class="current-time" id="currentTime"></div>
-        <div class="time-period" id="timePeriod"></div>
+                <div class="subject-card" data-subject="science">
+                    <div class="subject-header">
+                        <h2>Science</h2>
+                        <span class="expand-icon">+</span>
+                    </div>
+                    <div class="topics-container" id="science-topics">
+                        <div class="topic-list">
+                            <a href="science/physics.html" class="topic-link">
+                                <div class="topic-card">
+                                    <h3>Physics</h3>
+                                </div>
+                            </a>
+                            <a href="science/chemistry.html" class="topic-link">
+                                <div class="topic-card">
+                                    <h3>Chemistry</h3>
+                                </div>
+                            </a>
+                            <a href="science/biology.html" class="topic-link">
+                                <div class="topic-card">
+                                    <h3>Biology</h3>
+                                </div>
+                            </a>
+                            <a href="science/biochemistry.html" class="topic-link">
+                                <div class="topic-card">
+                                    <h3>Biochemistry</h3>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subject-card" data-subject="history">
+                    <div class="subject-header">
+                        <h2>History</h2>
+                        <span class="expand-icon">+</span>
+                    </div>
+                    <div class="topics-container" id="history-topics">
+                        <div class="topic-list">
+                            <a href="history/ancient.html" class="topic-link">
+                                <div class="topic-card">
+                                    <h3>Ancient History</h3>
+                                </div>
+                            </a>
+                            <a href="history/america.html" class="topic-link">
+                                <div class="topic-card">
+                                    <h3>American History</h3>
+                                </div>
+                            </a>
+                            <a href="history/modern.html" class="topic-link">
+                                <div class="topic-card">
+                                    <h3>Modern History</h3>
+                                </div>
+                            </a>
+                            <a href="history/wars.html" class="topic-link">
+                                <div class="topic-card">
+                                    <h3>World Wars</h3>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
     </div>
-  </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
